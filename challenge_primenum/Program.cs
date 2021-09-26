@@ -9,7 +9,6 @@ namespace challenge_primenum {
             if (num == 2 || num == 3) return true;
             if (num <= 1 || num % 2 == 0 || num % 3 == 0 || (num > 5 && charArray[^1] == '5')) return false;
 
-
             return true;
         }
 
@@ -53,7 +52,7 @@ namespace challenge_primenum {
             bool isPrime = IsPrime(yourPrime);
             List<int> factors = new List<int>();
 
-            for (int i = 1; i < 100 + 1; i++) if (yourPrime % i == 0) factors.Add(i);
+            for (int i = 1; i < yourPrime + 1; i++) if (yourPrime % i == 0) factors.Add(i);
 
             Console.WriteLine($"{(isPrime ? "Your number is prime" : "Your number is not prime")}\nFactors of {yourPrime}: {string.Join(", ", factors)}\nClosest prime: {GetClosestPrime(yourPrime)}");
         }
